@@ -16,20 +16,20 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#services">Services</a></li> -->
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Sales</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#about">About</a></li> -->
+          <!-- <li class="nav-item"><a class="nav-link" href="#team">Team</a></li> -->
+          <li class="nav-item"><a class="nav-link" href="#contact">Post a Sale</a></li>
         </ul>
       </div>
     </div>
   </nav>
   <header class="masthead">
     <div class="container">
-      <div class="masthead-subheading">Welcome To Our Studio!</div>
-      <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-      <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+      <div class="masthead-subheading">What will you find?</div>
+      <div class="masthead-heading text-uppercase">Rummagem</div>
+      <a class="btn btn-primary btn-xl text-uppercase" href="#services">Treasures</a>
     </div>
   </header>
   <!-- Portfolio Grid-->
@@ -137,7 +137,7 @@
   <section class="page-section" id="contact">
     <div class="container">
       <div class="text-center">
-        <h2 class="section-heading text-uppercase">Contact Us</h2>
+        <h2 class="section-heading text-uppercase">Post a Sale</h2>
         <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
       </div>
       <!-- * * * * * * * * * * * * * * *-->
