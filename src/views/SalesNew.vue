@@ -36,70 +36,86 @@ export default {
               <ul>
                 <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
               </ul>
-              Title
-              <input
-                class="form-control"
-                id="title"
-                type="text"
-                placeholder="Your Title "
-                v-model="newSaleParams.title"
-              />
-              Description
-              <input
-                class="form-control"
-                id="descripton"
-                placeholder="Your description "
-                type="text"
-                v-model="newSaleParams.description"
-              />
-              Address
-              <input
-                class="form-control"
-                id="address"
-                placeholder="Your Address "
-                type="text"
-                v-model="newSaleParams.address"
-              />
-              Picture
-              <input
-                class="form-control"
-                id="picture"
-                placeholder="Your Picture "
-                type="text"
-                v-model="newSaleParams.picture"
-              />
-              Start Date
-              <input
-                class="form-control"
-                id="start_date"
-                placeholder="Your Start Date"
-                type="text"
-                v-model="newSaleParams.start_date"
-              />
-              End Date
-              <input
-                class="form-control"
-                id="end_date"
-                placeholder="Your End Date"
-                type="text"
-                v-model="newSaleParams.end_date"
-              />
-              Start Time
-              <input
-                class="form-control"
-                id="start_time"
-                placeholder="Your Start Time"
-                type="text"
-                v-model="newSaleParams.start_time"
-              />
-              End Time
-              <input
-                class="form-control"
-                id="end_time"
-                placeholder="Your End Time"
-                type="text"
-                v-model="newSaleParams.end_time"
-              />
+              <div>
+                Title
+                <input
+                  class="form-control"
+                  id="title"
+                  type="text"
+                  placeholder="Your Title "
+                  v-model="newSaleParams.title"
+                />
+              </div>
+              <div>
+                Description
+                <input
+                  class="form-control"
+                  id="descripton"
+                  placeholder="Your description "
+                  type="text"
+                  v-model="newSaleParams.description"
+                />
+              </div>
+              <div>
+                Address
+                <input
+                  class="form-control"
+                  id="address"
+                  placeholder="Your Address "
+                  type="text"
+                  v-model="newSaleParams.address"
+                />
+              </div>
+              <div>
+                Picture
+                <input
+                  class="form-control"
+                  id="picture"
+                  placeholder="Your Picture "
+                  type="text"
+                  v-model="newSaleParams.picture"
+                />
+              </div>
+              <div>
+                Start Date
+                <input
+                  class="form-control"
+                  id="start_date"
+                  placeholder="Your Start Date"
+                  type="text"
+                  v-model="newSaleParams.start_date"
+                />
+              </div>
+              <div>
+                End Date
+                <input
+                  class="form-control"
+                  id="end_date"
+                  placeholder="Your End Date"
+                  type="text"
+                  v-model="newSaleParams.end_date"
+                />
+              </div>
+              <div>
+                Start Time
+                <input
+                  class="form-control"
+                  id="start_time"
+                  placeholder="Your Start Time"
+                  type="text"
+                  v-model="newSaleParams.start_time"
+                />
+              </div>
+              <div>
+                End Time
+                <input
+                  class="form-control"
+                  id="end_time"
+                  placeholder="Your End Time"
+                  type="text"
+                  v-model="newSaleParams.end_time"
+                />
+              </div>
               <input type="submit" value="Create" />
             </div>
           </div>
