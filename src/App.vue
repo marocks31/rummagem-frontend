@@ -36,7 +36,7 @@
   <section class="page-section bg-light" id="portfolio">
     <div class="container">
       <div class="text-center">
-        <h2 class="section-heading text-uppercase">Portfolio</h2>
+        <h2 class="section-heading text-uppercase">Sales</h2>
         <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
       </div>
       <div class="row">
@@ -233,7 +233,7 @@
   <footer class="footer py-4">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2022</div>
+        <div class="col-lg-4 text-lg-start">Copyright &copy; Rummagem 2022</div>
         <div class="col-lg-4 my-3 my-lg-0">
           <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
           <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
