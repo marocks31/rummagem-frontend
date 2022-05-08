@@ -21,6 +21,7 @@
           <!-- <li class="nav-item"><a class="nav-link" href="#about">About</a></li> -->
           <!-- <li class="nav-item"><a class="nav-link" href="#team">Team</a></li> -->
           <li class="nav-item"><a class="nav-link" href="#contact">Post a Sale</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#/signup">Sign Up</a></li>
         </ul>
       </div>
     </div>
