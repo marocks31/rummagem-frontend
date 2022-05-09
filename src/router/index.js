@@ -3,8 +3,10 @@ import HomeView from "../views/HomeView.vue";
 import SignupView from "../views/SignupView.vue";
 import LoginView from "../views/LoginView.vue";
 import LogoutView from "../views/LogoutView.vue";
-import SalesNew from "../views/SalesNew.vue";
 import SalesIndex from "../views/SalesIndex.vue";
+import SalesNew from "../views/SalesNew.vue";
+import SalesShow from "../views/SalesShow.vue";
+import SalesEdit from "..//views/SalesEdit.vue";
 // import
 
 const routes = [
@@ -42,6 +44,16 @@ const routes = [
     path: "/sales",
     name: "sales-index",
     component: SalesIndex,
+  },
+  {
+    path: "/sales/:id",
+    name: "sales-show",
+    component: SalesShow,
+  },
+  {
+    path: "/sales/id:edit",
+    name: "sales-edit",
+    component: SalesEdit,
   },
 ];
 
