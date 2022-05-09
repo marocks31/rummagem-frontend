@@ -23,15 +23,11 @@ export default {
 
 <template>
   <div class="sales-index">
-    <h1>All sales</h1>
-    <div v-for="sale in sales" v-bind:key="sale.id">
+    <h1 class="m-3">All sales</h1>
+    <div class="col" v-for="sale in sales" v-bind:key="sale.title">
       <h2>{{ sale.title }}</h2>
-      <h3>{{ sale.address }}</h3>
-      <img v-bind:src="sale.picture" v-bind:alt="sale.title" />
-      <p>Start date {{ sale.start_date }}</p>
-      <p>Start time {{ sale.start_time }}</p>
-      <p>End date {{ sale.end_date }}</p>
-      <p>End time {{ sale.end_time }}</p>
+      <img class="img-fluid" v-bind:src="sale.picture" v-bind:alt="sale.title" style="width: 25rem" />
+      <h4>{{ sale.address }}</h4>
       <p>Start date {{ sale.start_date }}</p>
       <p>Start time {{ sale.start_time }}</p>
     </div>

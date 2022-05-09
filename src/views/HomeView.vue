@@ -11,91 +11,16 @@
       <div class="row">
         <div class="col-lg-4 col-sm-6 mb-4">
           <!-- Portfolio item 1-->
-          <div class="portfolio-item">
-            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+          <div v-for="sale in sales" class="portfolio-item" v-bind:key="sale">
+            <a class="portfolio-link" data-bs-toggle="modal" href="/agendas">
               <div class="portfolio-hover">
                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
               </div>
-              <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
+              <img class="img-fluid" v-bind:src="sale.picture" v-bind:alt="sale.title" />
             </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">Threads</div>
-              <div class="portfolio-caption-subheading text-muted">Illustration</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <!-- Portfolio item 2-->
-          <div class="portfolio-item">
-            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-              </div>
-              <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">Explore</div>
-              <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <!-- Portfolio item 3-->
-          <div class="portfolio-item">
-            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-              </div>
-              <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">Finish</div>
-              <div class="portfolio-caption-subheading text-muted">Identity</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-          <!-- Portfolio item 4-->
-          <div class="portfolio-item">
-            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-              </div>
-              <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">Lines</div>
-              <div class="portfolio-caption-subheading text-muted">Branding</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-          <!-- Portfolio item 5-->
-          <div class="portfolio-item">
-            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-              </div>
-              <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">Southwest</div>
-              <div class="portfolio-caption-subheading text-muted">Website Design</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <!-- Portfolio item 6-->
-          <div class="portfolio-item">
-            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-              </div>
-              <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">Window</div>
-              <div class="portfolio-caption-subheading text-muted">Photography</div>
+            <div class="portfolio-caption" v-bind:key="sale.title">
+              <div class="portfolio-caption-heading">{{ sale.title }}</div>
+              <div class="portfolio-caption-subheading text-muted">{{ sale.address }}</div>
             </div>
           </div>
         </div>
@@ -105,14 +30,43 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data: function () {
     return {
       message: "Welcome to Vue.js!",
+      sales: [],
+      newSaleParams: {},
+      currentSale: {},
     };
   },
-  created: function () {},
-  methods: {},
+  created: function () {
+    this.indexSales();
+  },
+  methods: {
+    indexSales: function () {
+      axios.get("/sales").then((response) => {
+        console.log("sales index", response);
+        this.sales = response.data;
+      });
+    },
+    createSale: function () {
+      axios
+        .post("/sales", this.newSaleParams)
+        .then((response) => {
+          console.log("sales create", response);
+          this.sales.push(response.data);
+          this.newSaleParams = {};
+        })
+        .catch((error) => {
+          console.log("sales create error", error.response);
+        });
+    },
+    showSale: function (sale) {
+      this.currentSale = sale;
+      document.querySelector("#sale-details").showModal();
+    },
+  },
 };
 </script>
 
