@@ -4,6 +4,7 @@ export default {
   data: function () {
     return {
       sales: [],
+      message: "hello?",
     };
   },
   created: function () {

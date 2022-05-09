@@ -39,7 +39,7 @@ const routes = [
     component: SalesNew,
   },
   {
-    path: "/sales/index",
+    path: "/sales",
     name: "sales-index",
     component: SalesIndex,
   },

@@ -19,7 +19,7 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
               <!-- <li class="nav-item"><a class="nav-link" href="#services">Services</a></li> -->
-              <li class="nav-item"><a class="nav-link" href="#portfolio">Sales</a></li>
+              <li class="nav-item"><a class="nav-link" href="/sales">Sales</a></li>
               <li v-if="!isLoggedIn" class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
               <li v-if="!isLoggedIn" class="nav-item"><a class="nav-link" href="/signout">Sign Out</a></li>
               <li class="nav-item"><a class="nav-link" href="/sales/new">Post a Sale</a></li>
