@@ -4,6 +4,8 @@ import SignupView from "../views/SignupView.vue";
 import LoginView from "../views/LoginView.vue";
 import LogoutView from "../views/LogoutView.vue";
 import SalesNew from "../views/SalesNew.vue";
+import SalesIndex from "../views/SalesIndex.vue";
+// import
 
 const routes = [
   {
@@ -35,6 +37,11 @@ const routes = [
     path: "/sales/new",
     name: "sales-new",
     component: SalesNew,
+  },
+  {
+    path: "/sales/index",
+    name: "sales-index",
+    component: SalesIndex,
   },
 ];
 

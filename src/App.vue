@@ -20,10 +20,10 @@
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
               <!-- <li class="nav-item"><a class="nav-link" href="#services">Services</a></li> -->
               <li class="nav-item"><a class="nav-link" href="#portfolio">Sales</a></li>
-              <!-- <li class="nav-item"><a class="nav-link" href="#about">About</a></li> -->
-              <!-- <li class="nav-item"><a class="nav-link" href="#team">Team</a></li> -->
+              <li v-if="!isLoggedIn" class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+              <li v-if="!isLoggedIn" class="nav-item"><a class="nav-link" href="/signout">Sign Out</a></li>
               <li class="nav-item"><a class="nav-link" href="/sales/new">Post a Sale</a></li>
-              <li class="nav-item"><a class="nav-link" href="/signup">Sign Up</a></li>
+              <li v-if="!isLoggedIn" key="" class="nav-item"><a class="nav-link" href="/signup">Sign Up</a></li>
             </ul>
           </div>
         </div>
@@ -60,6 +60,21 @@
     </footer>
   </div>
 </template>
+
+<script>
+export default {
+  data: function () {
+    return {
+      isLoggedIn: false,
+    };
+  },
+  watch: {
+    $route: function () {
+      this.isLoggedIn = !!localStorage.jwt;
+    },
+  },
+};
+</script>
 
 <style>
 #app {
