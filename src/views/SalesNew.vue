@@ -38,19 +38,12 @@ export default {
               </ul>
               <div>
                 Title
-                <input
-                  class="form-control"
-                  id="title"
-                  type="text"
-                  placeholder="Your Title "
-                  v-model="newSaleParams.title"
-                />
+                <input class="form-control" type="text" placeholder="Your Title " v-model="newSaleParams.title" />
               </div>
               <div>
                 Description
                 <input
                   class="form-control"
-                  id="descripton"
                   placeholder="Your description "
                   type="text"
                   v-model="newSaleParams.description"
@@ -58,29 +51,16 @@ export default {
               </div>
               <div>
                 Address
-                <input
-                  class="form-control"
-                  id="address"
-                  placeholder="Your Address "
-                  type="text"
-                  v-model="newSaleParams.address"
-                />
+                <input class="form-control" placeholder="Your Address " type="text" v-model="newSaleParams.address" />
               </div>
               <div>
                 Picture
-                <input
-                  class="form-control"
-                  id="picture"
-                  placeholder="Your Picture "
-                  type="text"
-                  v-model="newSaleParams.picture"
-                />
+                <input class="form-control" placeholder="Your Picture " type="text" v-model="newSaleParams.picture" />
               </div>
               <div>
                 Start Date
                 <input
                   class="form-control"
-                  id="start_date"
                   placeholder="Your Start Date"
                   type="text"
                   v-model="newSaleParams.start_date"
@@ -88,19 +68,12 @@ export default {
               </div>
               <div>
                 End Date
-                <input
-                  class="form-control"
-                  id="end_date"
-                  placeholder="Your End Date"
-                  type="text"
-                  v-model="newSaleParams.end_date"
-                />
+                <input class="form-control" placeholder="Your End Date" type="text" v-model="newSaleParams.end_date" />
               </div>
               <div>
                 Start Time
                 <input
                   class="form-control"
-                  id="start_time"
                   placeholder="Your Start Time"
                   type="text"
                   v-model="newSaleParams.start_time"
@@ -108,15 +81,9 @@ export default {
               </div>
               <div>
                 End Time
-                <input
-                  class="form-control"
-                  id="end_time"
-                  placeholder="Your End Time"
-                  type="text"
-                  v-model="newSaleParams.end_time"
-                />
+                <input class="form-control" placeholder="Your End Time" type="text" v-model="newSaleParams.end_time" />
               </div>
-              <input type="submit" value="Create" />
+              <input type="submit" value="createSale" />
             </div>
           </div>
         </div>

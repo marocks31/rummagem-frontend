@@ -12,7 +12,14 @@ export default {
       this.sale = response.data;
     });
   },
-  methods: {},
+  methods: {
+    destroySale: function (sale) {
+      axios.delete("/sales/" + sale.id).then((response) => {
+        console.log("sales destroy", response);
+        this.$router.push("/sales");
+      });
+    },
+  },
 };
 </script>
 
@@ -26,6 +33,8 @@ export default {
     <p>Start Date: {{ sale.start_date }}</p>
     <p>End Time: {{ sale.end_time }}</p>
     <p>End Date: {{ sale.end_date }}</p>
-    <router-link to="/sales">Back to all</router-link>
+    <router-link v-bind:to="`/sales/${sale.id}/edit`">Edit Sale</router-link>
+    <button v-on:click="destroySale(sale)">Delete Sale</button>
+    <router-link to="/sales">Back to All</router-link>
   </div>
 </template>

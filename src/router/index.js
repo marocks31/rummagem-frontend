@@ -51,7 +51,7 @@ const routes = [
     component: SalesShow,
   },
   {
-    path: "/sales/id:edit",
+    path: "/sales/:id/edit",
     name: "sales-edit",
     component: SalesEdit,
   },
