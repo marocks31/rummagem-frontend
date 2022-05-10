@@ -32,7 +32,7 @@ export default {
       <form v-on:submit.prevent="createSale()">
         <div class="row align-items-stretch mb-5">
           <div class="col-md-6">
-            <div class="form group">
+            <div class="form-group">
               <ul>
                 <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
               </ul>
@@ -92,4 +92,8 @@ export default {
   </div>
 </template>
 
-<style></style>
+<style>
+h1 {
+  color: blue;
+}
+</style>

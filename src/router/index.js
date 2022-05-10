@@ -7,6 +7,7 @@ import SalesIndex from "../views/SalesIndex.vue";
 import SalesNew from "../views/SalesNew.vue";
 import SalesShow from "../views/SalesShow.vue";
 import SalesEdit from "..//views/SalesEdit.vue";
+import AgendasIndex from "..//views/AgendasIndex.vue";
 // import
 
 const routes = [
@@ -54,6 +55,11 @@ const routes = [
     path: "/sales/:id/edit",
     name: "sales-edit",
     component: SalesEdit,
+  },
+  {
+    path: "/agendas",
+    name: "agendas-index",
+    component: AgendasIndex,
   },
 ];
 
