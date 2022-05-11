@@ -8,6 +8,7 @@ import SalesNew from "../views/SalesNew.vue";
 import SalesShow from "../views/SalesShow.vue";
 import SalesEdit from "..//views/SalesEdit.vue";
 import AgendasIndex from "..//views/AgendasIndex.vue";
+import AboutView from "..//views/AboutView.vue";
 // import
 
 const routes = [
@@ -19,7 +20,7 @@ const routes = [
   {
     path: "/about",
     name: "about",
-    component: () => import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    component: AboutView,
   },
   {
     path: "/signup",
