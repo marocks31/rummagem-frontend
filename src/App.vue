@@ -35,7 +35,7 @@
       <div class="container">
         <div class="masthead-subheading">What will you find?</div>
         <div class="masthead-heading text-uppercase">Rummagem</div>
-        <a class="btn btn-primary btn-xl text-uppercase" href="#services">Treasures</a>
+        <a class="btn btn-primary btn-xl text-uppercase" href="/sales">Sales</a>
       </div>
     </header>
     <!-- Portfolio Grid-->

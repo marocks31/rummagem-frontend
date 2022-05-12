@@ -4,23 +4,28 @@
   </div>
   <section class="page-section bg-light" id="portfolio">
     <div class="container">
-      <div class="text-center">
-        <h2 class="section-heading text-uppercase">Sales</h2>
-        <h3 class="section-subheading text-muted">Browse sales or post your own.</h3>
+      <div class="row">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">There are {{ sales.length }} sales near you.</h2>
+          <h3 class="section-subheading text-muted">Browse sales or post your own.</h3>
+        </div>
       </div>
       <div class="row">
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <!-- Portfolio item 1-->
-          <div v-for="sale in sales" class="portfolio-item" v-bind:key="sale">
-            <a class="portfolio-link" data-bs-toggle="modal" href="/agendas">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-              </div>
-              <img class="img-fluid" v-bind:src="sale.picture" v-bind:alt="sale.title" />
-            </a>
-            <div class="portfolio-caption" v-bind:key="sale.title">
-              <div class="portfolio-caption-heading">{{ sale.title }}</div>
-              <div class="portfolio-caption-subheading text-muted">{{ sale.address }}</div>
+        <div
+          class="col"
+          v-bind:class="{ selected: sale === currentSale }"
+          v-for="sale in sales"
+          v-bind:key="sale.title"
+          v-on:click="currentSale = sale"
+        >
+          <div class="card mx-auto my-4" style="width: 18rem">
+            <h2 class="card-title">{{ sale.title }}</h2>
+            <img class="img-fluid" v-bind:src="sale.picture" v-bind:alt="sale.title" style="width: 25rem" />
+            <div class="card-body">
+              <h4 class="card-text">{{ sale.address }}</h4>
+              <p class="card-text">Start date {{ sale.start_date }}</p>
+              <p class="card-text">Start time {{ sale.start_time }}</p>
+              <a v-bind:href="`/sales/${sale.id}`" class="btn btn-primary">Details</a>
             </div>
           </div>
         </div>
