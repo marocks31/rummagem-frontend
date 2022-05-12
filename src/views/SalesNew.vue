@@ -5,13 +5,29 @@ export default {
     return {
       newSaleParams: {},
       errors: [],
+      imageFile: "",
     };
   },
   created: function () {},
   methods: {
+    setFile: function (event) {
+      if (event.target.files.length > 0) {
+        this.imageFile = event.target.files[0];
+      }
+    },
     createSale: function () {
+      var saleForm = new FormData();
+      saleForm.append("title", this.newSaleParams.title);
+      saleForm.append("description", this.newSaleParams.description);
+      saleForm.append("address", this.newSaleParams.address);
+      saleForm.append("image_file", this.imageFile);
+      saleForm.append("start_date", this.newSaleParams.start_date);
+      saleForm.append("end_date", this.newSaleParams.end_date);
+      saleForm.append("start_time", this.newSaleParams.start_time);
+      saleForm.append("end_time", this.newSaleParams.end_time);
+
       axios
-        .post("/sales", this.newSaleParams)
+        .post("/sales", saleForm)
         .then((response) => {
           console.log("sales create", response);
           this.$router.push("/sales");
@@ -55,7 +71,13 @@ export default {
               </div>
               <div>
                 Picture
-                <input class="form-control" placeholder="Your Picture " type="text" v-model="newSaleParams.picture" />
+                <input
+                  class="form-control"
+                  placeholder="Your Picture "
+                  type="file"
+                  v-on:change="setFile($event)"
+                  ref="fileInput"
+                />
               </div>
               <div>
                 Start Date

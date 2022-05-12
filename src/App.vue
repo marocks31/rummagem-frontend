@@ -23,7 +23,7 @@
               <li class="nav-item"><a class="nav-link" href="/sales">Sales</a></li>
               <li class="nav-item"><a class="nav-link" href="/sales/new">Post a Sale</a></li>
               <li class="nav-item"><a class="nav-link" href="/agendas">Agenda</a></li>
-              <li class="nav-item"><a class="nav-link" href="/about">Map View</a></li>
+              <!-- <li class="nav-item"><a class="nav-link" href="/about">Map View</a></li> -->
 
               <li v-if="!isLoggedIn" class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
               <li v-if="isLoggedIn" class="nav-item"><a class="nav-link" href="/logout">Sign Out</a></li>
