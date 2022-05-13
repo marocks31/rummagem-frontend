@@ -97,22 +97,47 @@ export default {
   <div class="sales-show">
     <h2>{{ sale.title }}</h2>
     <p>Address: {{ sale.address }}</p>
-    <img v-bind:src="sale.picture" v-bind:alt="sale.title" />
+    <img v-bind:src="sale.picture" v-bind:alt="sale.title" width="400" height="300" />
     <p>Description: {{ sale.description }}</p>
     <p>Start Time: {{ sale.start_time }}</p>
     <p>Start Date: {{ sale.start_date }}</p>
     <p>End Time: {{ sale.end_time }}</p>
     <p>End Date: {{ sale.end_date }}</p>
-
-    <button><router-link v-bind:to="`/sales/${sale.id}/edit`">Edit Sale</router-link></button>
-    <button><router-link to="/sales">Back to All</router-link></button>
-    <button v-on:click="createAgendas(sale)">Add to Agenda</button>
-
-    <div>
-      <button v-on:click="destroySale(sale)">Delete Sale</button>
+    <div class="col">
+      <div>
+        <button><router-link to="/sales">Back to All</router-link></button>
+        <div></div>
+        <p></p>
+        <div></div>
+        <button v-on:click="createAgendas(sale)">Add to Agenda</button>
+      </div>
+      <p></p>
+      <button><router-link v-bind:to="`/sales/${sale.id}/edit`">Edit Sale</router-link></button>
+      <p></p>
+      <div><button v-on:click="destroySale(sale)">Delete Sale</button></div>
+      <p></p>
+      <div></div>
     </div>
   </div>
+  <h2>Map View</h2>
   <div id="map"></div>
 </template>
 
-<style></style>
+<style>
+button {
+  background-color: rgb(237, 196, 218);
+  color: black;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+h2 {
+  color: rgb(237, 196, 218);
+}
+#map {
+  width: 50vh;
+  height: 50vh;
+}
+</style>

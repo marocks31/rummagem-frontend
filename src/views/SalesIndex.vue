@@ -24,7 +24,7 @@ export default {
 
 <template>
   <div class="sales-index">
-    <h1 class="m-3">All sales</h1>
+    <h1 class="m-3">ALL SALES</h1>
     <div class="row">
       <div
         class="col"
