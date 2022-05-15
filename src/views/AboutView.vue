@@ -22,7 +22,7 @@ export default {
     });
     axios
       .get(
-        `https://api.mapbox.com/geocoding/v5/mapbox.places/3745 N Lincoln Ave, Chicago, IL 60613.json?access_token=VUE_APP_MAP_API_KEY`
+        `https://api.mapbox.com/geocoding/v5/mapbox.places/3745 N Lincoln Ave, Chicago, IL 60613.json?access_token=${process.env.VUE_APP_MAP_API_KEY}`
       )
 
       .then((response) => {
