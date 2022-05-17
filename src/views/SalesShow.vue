@@ -119,25 +119,44 @@ export default {
       <div></div>
     </div>
   </div>
-  <h2>Map View</h2>
+  <div class="map-title">
+    <h2>Map View</h2>
+  </div>
   <div id="map"></div>
 </template>
 
 <style>
-button {
-  background-color: rgb(237, 196, 218);
-  color: black;
-}
-
 a {
   color: black;
   text-decoration: none;
 }
-h2 {
-  color: rgb(237, 196, 218);
-}
+
 #map {
   width: 50vh;
   height: 50vh;
+}
+.sales-show {
+  color: #000000;
+  background-image: linear-gradient(
+    to top,
+    #f8f8ff,
+    #d16ba5,
+    #dd6483,
+    #dc6660,
+    #ce6f3f,
+    #b67b22,
+    #af8018,
+    #a7850c,
+    #9e8a00,
+    #ae8900,
+    #bf8800,
+    #d08505,
+    #e18214,
+    #d16ba5
+  );
+}
+.map-title {
+  background-color: #d16ba5;
+  color: black;
 }
 </style>

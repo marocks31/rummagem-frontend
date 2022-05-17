@@ -20,7 +20,7 @@
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
               <!-- <li class="nav-item"><a class="nav-link" href="#services">Services</a></li> -->
               <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="/sales">Sales</a></li>
+              <!-- <li class="nav-item"><a class="nav-link" href="/sales">Sales</a></li> -->
               <li class="nav-item"><a class="nav-link" href="/sales/new">Post a Sale</a></li>
               <li class="nav-item"><a class="nav-link" href="/agendas">Agenda</a></li>
               <!-- <li class="nav-item"><a class="nav-link" href="/about">Map View</a></li> -->
@@ -32,10 +32,10 @@
           </div>
         </div>
       </nav>
-      <div class="container">
-        <div class="masthead-subheading">What will you find?</div>
+      <div class="container-title">
+        <!-- <a class="btn btn-primary btn-xl text-uppercase" href="/sales">Sales</a> -->
         <div class="masthead-heading text-uppercase">Rummagem</div>
-        <a class="btn btn-primary btn-xl text-uppercase" href="/sales">Sales</a>
+        <div class="masthead-subheading">What treasures will you find?</div>
       </div>
     </header>
     <!-- Portfolio Grid-->
@@ -44,22 +44,7 @@
     <!-- Footer-->
     <footer class="footer py-4">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-4 text-lg-start">Copyright &copy; Rummagem 2022</div>
-          <div class="col-lg-4 my-3 my-lg-0">
-            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-          <div class="col-lg-4 text-lg-end">
-            <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-            <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
-          </div>
-        </div>
+        <img class="footer-img" style="width: auto; height: 200px" />
       </div>
     </footer>
   </div>
@@ -82,17 +67,22 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #ffffff;
+  background-image: url("https://res.cloudinary.com/dwstndeye/image/upload/v1652664225/fader-1_ozfkdg.png");
+  padding: 0;
+  object-fit: cover;
+  background-repeat: repeat;
+  background-size: cover;
 }
 
 nav {
-  padding: 30px;
+  padding: 20px;
 }
 
 nav a {
@@ -102,5 +92,27 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.masthead {
+  text-shadow: 3px 3px #090808;
+  width: auto;
+  background-position: center;
+  height: auto;
+}
+.footer {
+  background-image: url("https://res.cloudinary.com/dwstndeye/image/upload/v1652643839/footer_2_ffdcwp.webp");
+}
+.masthead-subheading {
+  position: relative;
+  bottom: 70px;
+}
+.img {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+  border-color: black;
+  border: 3px solid;
+  border-color: #d16ba5;
 }
 </style>

@@ -51,3 +51,11 @@ export default {
     </form>
   </div>
 </template>
+
+\
+<style>
+.signup {
+  color: black;
+  align-items: center;
+}
+</style>
