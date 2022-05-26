@@ -4,27 +4,25 @@ export default {
   data: function () {
     return {
       sale: {},
-      editSaleParams: {},
       errors: [],
     };
   },
   created: function () {
-    axios.get("/sales/" + this.$route.params.id).then((response) => {
+    axios.get(`/sales/${this.$route.params.id}`).then((response) => {
       console.log("sales show", response);
       this.sale = response.data;
-      this.editSaleParams = this.sale;
     });
   },
   methods: {
-    updateSale: function (sale) {
+    editSale() {
       axios
-        .patch("/sales/" + sale.id, this.editSaleParams)
+        .patch(`/sales/${this.sale.id}`, this.sale)
         .then((response) => {
-          console.log("sales update", response);
+          console.log("sales edit", response);
           this.$router.push("/sales");
         })
         .catch((error) => {
-          console.log("sales update error", error.response);
+          console.log("sales edit error", error.response);
           this.errors = error.response.data.errors;
         });
     },
@@ -36,44 +34,44 @@ export default {
   <div class="sales-edit row">
     <h1>Edit Sale</h1>
     <div class="col-2 m-auto editsale">
-      <form v-on:submit.prevent="updateSale(sale)">
+      <form v-on:submit.prevent="editSale()">
         <ul>
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
         </ul>
         <div>
           Title:
-          <input type="text" v-model="editSaleParams.title" />
+          <input type="text" v-model="sale.title" />
         </div>
         <div>
           Address:
-          <input type="text" v-model="editSaleParams.address" />
+          <input type="text" v-model="sale.address" />
         </div>
         <div>
           Picture:
-          <input type="text" v-model="editSaleParams.picture" />
+          <input type="text" v-model="sale.picture" />
         </div>
         <div>
           Description:
-          <input type="text" v-model="editSaleParams.description" />
+          <input type="text" v-model="sale.description" />
         </div>
         <div>
           Start Date:
-          <input type="text" v-model="editSaleParams.start_date" />
+          <input type="text" v-model="sale.start_date" />
         </div>
         <div>
           Start Time:
-          <input type="text" v-model="editSaleParams.start_time" />
+          <input type="text" v-model="sale.start_time" />
         </div>
         <div>
           End Date:
-          <input type="text" v-model="editSaleParams.end_date" />
+          <input type="text" v-model="sale.end_date" />
         </div>
         <div>
           End Time:
-          <input type="text" v-model="editSaleParams.end_time" />
+          <input type="text" v-model="sale.end_time" />
         </div>
         <div>
-          <input type="submit" value="Update" />
+          <input type="submit" value="edit" />
         </div>
       </form>
     </div>
