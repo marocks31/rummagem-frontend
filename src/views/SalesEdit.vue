@@ -9,7 +9,7 @@ export default {
   },
   created: function () {
     axios.get(`/sales/${this.$route.params.id}`).then((response) => {
-      console.log("sales show", response);
+      // console.log("sales show", response);
       this.sale = response.data;
     });
   },
@@ -22,8 +22,9 @@ export default {
           this.$router.push("/sales");
         })
         .catch((error) => {
-          console.log("sales edit error", error.response);
+          // console.log("sales edit error", error.response);
           this.errors = error.response.data.errors;
+          console.log(this.errors);
         });
     },
   },
